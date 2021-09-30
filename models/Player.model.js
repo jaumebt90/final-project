@@ -4,10 +4,10 @@ const { Schema, model } = mongoose;
 const playerSchema = new Schema({
   image: String,
   name: String,
-  alis: String,
-  Number: Number,
+  alias: String,
+  number: Number,
   position: String,
-  hobbies: String,
+  hobbie: [String],
   // owner will be added later on
 });
 
