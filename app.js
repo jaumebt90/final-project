@@ -23,10 +23,10 @@ const taskRouter = require("./routes/task.routes");
 app.use("/api",isAuthenticated, taskRouter);            // <== UPDATE
 
 
-app.use((req, res, next) => {
-    // If no routes match, send them the React HTML.
-    res.sendFile(__dirname + "/public/index.html");
-  });
+// app.use((req, res, next) => {
+//     // If no routes match, send them the React HTML.
+//     res.sendFile(__dirname + "/public/index.html");
+//   });
 
 // require("./error-handling")(app);
 
