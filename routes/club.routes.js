@@ -19,6 +19,13 @@ router.get("/club/staff", (req, res, next) => {
     .catch((err) => console.log(err));
 });
 
+router.delete("/club/staff/:id", (req, res, next) => {
+  
+  Staff.findByIdAndDelete(req.params.id)
+    .then((response) => res.send("DELETE OKAY"))
+    .catch((err) => res.json(err))
+})
+
 router.get("/club/players", (req, res, next) => {
   /* console.log(req); */
   Player.find()
