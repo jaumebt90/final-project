@@ -20,11 +20,10 @@ router.get("/club/staff", (req, res, next) => {
 });
 
 router.delete("/club/staff/:id", (req, res, next) => {
-  
   Staff.findByIdAndDelete(req.params.id)
     .then((response) => res.send("DELETE OKAY"))
-    .catch((err) => res.json(err))
-})
+    .catch((err) => res.json(err));
+});
 
 router.get("/club/players", (req, res, next) => {
   /* console.log(req); */
@@ -33,6 +32,13 @@ router.get("/club/players", (req, res, next) => {
       res.json(allPlayers);
     })
     .catch((err) => console.log(err));
+});
+
+router.delete("/club/players/:id", (req, res, next) => {
+  console.log(req.params);
+  Player.findByIdAndDelete(req.params.id)
+    .then((response) => res.send("DELETE OKAY"))
+    .catch((err) => res.json(err));
 });
 
 module.exports = router;
