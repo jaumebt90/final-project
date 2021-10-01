@@ -6,11 +6,19 @@ const New = require("../models/News.model");
 
 router.post("/news", (req, res, next) => {
   console.log(req.body);
-  const { title, description } = req.body
+  const { title, description } = req.body;
 
-  New.create({title, description})
-  .then((response) => res.json(response))
-  .catch((err) => res.json(err))
+  New.create({ title, description })
+    .then((response) => res.json(response))
+    .catch((err) => res.json(err));
+});
+
+router.delete("/news/:id", (req, res, next) => {
+  console.log(req.params);
+
+  New.findByIdAndDelete(req.params.id)
+    .then((response) => res.send("DELETE OKAY"))
+    .catch((err) => res.json(err))
 });
 
 module.exports = router;
