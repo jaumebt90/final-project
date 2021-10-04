@@ -13,4 +13,23 @@ router.post("/staff", (req, res, next) => {
     .catch((err) => res.json(err));
 });
 
+router.get("/staff/:id", (req, res, next) => {
+  Staff.findById(req.params.id)
+    .then((response) => res.status(200).json(response))
+    .catch((err) => res.json(err))
+})
+
+router.put("/staff/:id", (req, res, next) => {
+  const staffId = req.params.id
+
+  if (!mongoose.Types.ObjectId.isValid(staffId)) {
+    res.status(400).json({ message: "Specified id is not valid" });
+    return;
+  }
+
+  Staff.findByIdAndUpdate(staffId, req.body, { new:true })
+    .then((updatedStaff) => res.json(updatedStaff))
+    .catch((err) => res.json(err))
+})
+
 module.exports = router;

@@ -25,6 +25,7 @@ router.get("/news/:id", (req, res, next) => {
 
 router.put("/news/:id", (req, res, next) => {
   const newId = req.params.id;
+
   if (!mongoose.Types.ObjectId.isValid(newId)) {
     res.status(400).json({ message: "Specified id is not valid" });
     return;
