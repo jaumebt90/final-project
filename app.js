@@ -14,6 +14,9 @@ app.use("/api", allRoutes);
 const authRouter = require("./routes/auth.routes");
 app.use("/api/auth", authRouter);
 
+const playsRouter = require("./routes/plays.routes");
+app.use("/api", playsRouter);
+
 const clubRouter = require("./routes/club.routes");
 app.use("/api", clubRouter);
 
@@ -23,8 +26,6 @@ app.use("/api", staffRouter);
 const playerRouter = require("./routes/player.routes");
 app.use("/api", playerRouter);
 
-const playsRouter = require("./routes/plays.routes");
-app.use("/api", playsRouter);
 
 const newsRouter = require("./routes/news.routes");
 app.use("/api", newsRouter);
