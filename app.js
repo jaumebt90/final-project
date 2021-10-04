@@ -23,6 +23,9 @@ app.use("/api", staffRouter);
 const playerRouter = require("./routes/player.routes");
 app.use("/api", playerRouter);
 
+const playsRouter = require("./routes/plays.routes");
+app.use("/api", playsRouter);
+
 const newsRouter = require("./routes/news.routes");
 app.use("/api", newsRouter);
 
