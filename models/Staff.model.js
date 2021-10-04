@@ -6,7 +6,7 @@ const staffSchema = new Schema({
   name: String,
   alias: String,
   position: String,
-  hobbie: [String],
+  hobbie: String,
   // owner will be added later on
 });
 

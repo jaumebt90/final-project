@@ -7,7 +7,7 @@ const playerSchema = new Schema({
   alias: String,
   number: Number,
   position: String,
-  hobbie: [String],
+  hobbie: String,
   // owner will be added later on
 });
 
