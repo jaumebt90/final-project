@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const Player = require("../models/Player.model");
 
 router.post("/players", (req, res, next) => {
-  console.log(req.body);
+  
   const { name, alias, number, position, hobbies } = req.body;
 
   Player.create({ name, alias, number, position, hobbies })

@@ -35,7 +35,6 @@ router.get("/club/players", (req, res, next) => {
 });
 
 router.delete("/club/players/:id", (req, res, next) => {
-  console.log(req.params);
   Player.findByIdAndDelete(req.params.id)
     .then((response) => res.send("DELETE OKAY"))
     .catch((err) => res.json(err));
