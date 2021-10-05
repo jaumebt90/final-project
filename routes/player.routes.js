@@ -7,9 +7,9 @@ const Player = require("../models/Player.model");
 router.post("/players", (req, res, next) => {
   console.log(req.body);
 
-  const { name, alias, number, position, hobbie } = req.body;
+  const { image, name, alias, number, position, hobbie } = req.body;
 
-  Player.create({ name, alias, number, position, hobbie })
+  Player.create({ image, name, alias, number, position, hobbie })
     .then((response) => res.json(response))
     .catch((err) => res.json(err));
 });
