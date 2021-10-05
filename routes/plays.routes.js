@@ -5,9 +5,9 @@ const Jugada = require("../models/Jugada.model");
 
 router.post("/play", (req, res, next) => {
   console.log("NUEVA JUGADA", req.body);
-  const { title, description, type } = req.body;
+  const { video, title, description, type } = req.body;
 
-  Jugada.create({ title, description, type })
+  Jugada.create({ video, title, description, type })
     .then((response) => res.json(response))
     .catch((err) => res.json(err));
 });
@@ -17,6 +17,15 @@ router.get("/plays", (req, res, next) => {
     .then((allPlays) => res.json(allPlays))
     .catch((err) => res.json(err));
 });
+
+router.get("/plays/:id" , (req, res, next) => {
+  const playId = req.params.id
+  console.log(playId)
+
+  Jugada.findById(playId)
+  .then((response) => res.status(200).json(response))
+  .catch((err) => res.json(err));
+})
 
 // router.delete("plays/:id", (req, res, next) => {
 //     console.log("Llega al BACK DELETE", req.params.id)
