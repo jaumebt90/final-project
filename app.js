@@ -30,11 +30,7 @@ app.use("/api", playerRouter);
 const newsRouter = require("./routes/news.routes");
 app.use("/api", newsRouter);
 
-const projectRouter = require("./routes/project.routes");
-app.use("/api", isAuthenticated, projectRouter); // <== UPDATE
 
-const taskRouter = require("./routes/task.routes");
-app.use("/api", isAuthenticated, taskRouter); // <== UPDATE
 
 // app.use((req, res, next) => {
 //     // If no routes match, send them the React HTML.
