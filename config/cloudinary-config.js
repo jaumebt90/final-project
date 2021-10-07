@@ -12,9 +12,9 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
   cloudinary,
   params: {
-    allowed_formats: ["jpg", "png", "video/mp4", "video/x-m4v", "mp4", "x-m4v"],
+    allowed_formats: ["jpg", "png","jpeg", "video/mp4", "video/x-m4v", "mp4", "x-m4v"],
     folder: "proyecto_web_racing", // The name of the folder in cloudinary
-    resource_type: "video", // => this is in case you want to upload other type of files, not just images
+    resource_type: "auto", // => this is in case you want to upload other type of files, not just images
     
   },
 });
