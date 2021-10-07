@@ -5,7 +5,6 @@ const mongoose = require("mongoose");
 const Player = require("../models/Player.model");
 
 router.post("/players", (req, res, next) => {
-  console.log("LO QUE LLEGA AL CREAR JUGADOR",req.body);
 
   const { image, name, alias, number, position, hobbie } = req.body;
 

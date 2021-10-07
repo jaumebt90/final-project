@@ -10,7 +10,6 @@ const Staff = require("../models/Staff.model");
 const Player = require("../models/Player.model");
 
 router.get("/club/staff", (req, res, next) => {
-  /* console.log(req); */
 
   Staff.find()
     .then((allStaff) => {
@@ -26,7 +25,6 @@ router.delete("/club/staff/:id", (req, res, next) => {
 });
 
 router.get("/club/players", (req, res, next) => {
-  /* console.log(req); */
   Player.find()
     .then((allPlayers) => {
       res.json(allPlayers);

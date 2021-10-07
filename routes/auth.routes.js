@@ -10,11 +10,9 @@ const saltRounds = 10;
 
 // POST /auth/signup  - Creates a new user in the database
 router.post("/signup", (req, res, next) => {
-  console.log("VALIDACION",req.body)
   const { email, password, name, credential } = req.body;
 
   if (credential !== "roberto") {
-    console.log(credential)
     res.status(400).json({ message: "Provide a valid credential" });
     return;
   }

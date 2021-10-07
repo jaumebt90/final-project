@@ -4,7 +4,6 @@ const mongoose = require("mongoose");
 const Jugada = require("../models/Jugada.model");
 
 router.post("/play", (req, res, next) => {
-  console.log("NUEVA JUGADA", req.body);
   const { video, title, description, type } = req.body;
 
   Jugada.create({ video, title, description, type })
@@ -20,22 +19,14 @@ router.get("/plays", (req, res, next) => {
 
 router.get("/plays/:id" , (req, res, next) => {
   const playId = req.params.id
-  console.log(playId)
 
   Jugada.findById(playId)
   .then((response) => res.status(200).json(response))
   .catch((err) => res.json(err));
 })
 
-// router.delete("plays/:id", (req, res, next) => {
-//     console.log("Llega al BACK DELETE", req.params.id)
-//   Jugada.findByIdAndDelete(req.params.id)
-//     .then((response) => res.send("DELETE OKAY"))
-//     .catch((err) => res.json(err));
-// });
 
 router.delete("/plays/:id", (req, res, next) => {
-  console.log("Llega al BACK DELETE", req.params.id);
   Jugada.findByIdAndDelete(req.params.id)
     .then((response) => res.send("DELETE OKAY"))
     .catch((err) => res.json(err));

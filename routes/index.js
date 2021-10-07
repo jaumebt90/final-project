@@ -14,9 +14,7 @@ router.get("/", (req, res, next) => {
 });
 
 router.post("/upload", multer.single("file"), (req, res, next) => {
-  console.log("SUBIDA A CLOUDINARY", req.file.path)
 
-  console.log(req.file.path)
 
   res.json({imageUrl: req.file.path})
 
